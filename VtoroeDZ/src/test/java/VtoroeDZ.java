@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class VtoroeDZ {
     protected static WebDriver driver;
     @Before
-public void setUo () {
+    public void setUo () {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
