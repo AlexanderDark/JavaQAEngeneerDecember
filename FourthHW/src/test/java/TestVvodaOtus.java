@@ -3,6 +3,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class TestVvodaOtus {
@@ -22,6 +23,7 @@ public class TestVvodaOtus {
     @Test
     public void mainOtusInfo () throws InterruptedException {
         LogIn.logInOtus(name, pass, driver);
+
     }
     @After
     public void closeWebDriver () {
