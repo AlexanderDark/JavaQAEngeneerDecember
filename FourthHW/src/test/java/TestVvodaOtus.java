@@ -5,9 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class TestVvodaOtus {
-    String name = System.getProperty("name");
+    String login = System.getProperty("login");
     String pass = System.getProperty("pass");
     protected static WebDriver driver;
     private Logger logger = LogManager.getLogger(TestVvodaOtus.class);
@@ -19,15 +23,21 @@ public class TestVvodaOtus {
         wDT = WebDriverType.CHROME;
         WebDriverFactory factory = new WebDriverFactory();
         driver = factory.createDriver(wDT);
+        logger.info("Драйвер поднят!");
     }
     @Test
     public void mainOtusInfo () throws InterruptedException {
-        LogIn.logInOtus(name, pass, driver);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        LogIn.logInOtus(login, pass, driver);
+        EnterPrivateInfo.enterText("facebook", "myFacebook", driver);
+
 
     }
     @After
     public void closeWebDriver () {
-        WebDriverFactory.closeDriver(driver);
+       // WebDriverFactory.closeDriver(driver);
 
     }
 }
+//nesito7589@nobitcoin.net
+//1234abcd
