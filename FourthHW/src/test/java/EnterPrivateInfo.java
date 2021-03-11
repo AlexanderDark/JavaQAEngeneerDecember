@@ -15,11 +15,10 @@ public class EnterPrivateInfo {
 
         }
         //driver.findElement(By.cssSelector(".select.lk-cv-block__input.lk-cv-block__input_3.lk-cv-block__input_md-4.js-lk-cv-custom-select")).click();
-        driver.findElement(By.xpath("//*[@class=\"select lk-cv-block__input lk-cv-block__input_3 lk-cv-block__input_md-4 js-lk-cv-custom-select\"]//..//*[contains(@span,\"Способ связи\")]")).click();
+        driver.findElement(By.xpath("//*[@class=\"input input_full lk-cv-block__input input_straight-bottom-right input_straight-top-right input_no-border-right lk-cv-block__input_fake lk-cv-block__input_select-fake js-custom-select-presentation\"]//span[contains(.,\"Способ\")]")).click();
         driver.findElement(By.cssSelector("[data-value=\""+contactType+"\"]")).click();
         driver.findElement(By.cssSelector("[name=\"contact-0-value\"]")).sendKeys(text);
         driver.findElement(By.cssSelector(".lk-cv-block__action.lk-cv-block__action_md-no-spacing.js-formset-add.js-lk-cv-custom-select-add")).click();
-        driver.findElement(By.xpath("//*[@class=\"box-inline v-top\"]//*[@class=\"new-item-list-name\"]//*[contains(@title,\"ЗУБР\")]")).click();
         //data-value="skype"
     }
 

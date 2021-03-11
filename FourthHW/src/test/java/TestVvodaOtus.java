@@ -29,7 +29,24 @@ public class TestVvodaOtus {
     public void mainOtusInfo () throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         LogIn.logInOtus(login, pass, driver);
-        EnterPrivateInfo.enterText("facebook", "myFacebook", driver);
+
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        PagesActions pagesAction = new PagesActions();
+        try {
+            pagesAction.openPage("https://otus.ru/lk/biography/personal/", driver);
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".select.lk-cv-block__input.lk-cv-block__input_3.lk-cv-block__input_md-4.js-lk-cv-custom-select")));
+        } catch (Exception e) {
+            pagesAction.openPage("https://otus.ru/lk/biography/personal/", driver);
+
+        }
+        //driver.findElement(By.cssSelector(".select.lk-cv-block__input.lk-cv-block__input_3.lk-cv-block__input_md-4.js-lk-cv-custom-select")).click();
+        driver.findElement(By.xpath("//span[contains(text(),\"Способ\")]")).click();
+        driver.findElement(By.cssSelector("[data-value=\"facebook\"]")).click();
+        driver.findElement(By.cssSelector("[name=\"contact-0-value\"]")).sendKeys("myFacebook");
+        driver.findElement(By.cssSelector(".lk-cv-block__action.lk-cv-block__action_md-no-spacing.js-formset-add.js-lk-cv-custom-select-add")).click();
+
+
+        ///EnterPrivateInfo.enterText("facebook", "myFacebook", driver);
 
 
     }
