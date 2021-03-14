@@ -25,5 +25,16 @@ public class LogIn {
     //pagesActions.enterText(webElement, name,driver);
 
     }
+    public static void openInfo (WebDriver driver) {
+        PagesActions pagesActions = new PagesActions();
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        try {
+            pagesActions.openPage("https://otus.ru/lk/biography/personal/", driver);
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".select.lk-cv-block__input.lk-cv-block__input_3.lk-cv-block__input_md-4.js-lk-cv-custom-select")));
+        } catch (Exception e) {
+            pagesActions.openPage("https://otus.ru/lk/biography/personal/", driver);
+        }
+
+    }
 
 }
