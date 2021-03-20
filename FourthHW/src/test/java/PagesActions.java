@@ -6,9 +6,7 @@ public class PagesActions {
     public void openPage (String url, WebDriver driver) {
         driver.get(url);
     }
-    public void enterText (WebElement webElement, String text, WebDriver driver) {
-        driver.findElement((By) webElement).sendKeys("2342342424");
-    }
+
 
 
 }
